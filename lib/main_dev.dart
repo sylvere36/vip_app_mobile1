@@ -11,29 +11,25 @@ import 'package:flutter_translate/flutter_translate.dart';
 void main() async {
   setupLocator();
   var delegate = await LocalizationDelegate.create(
-      fallbackLocale: 'fr',
-      supportedLocales: ['en', 'fr']);
+      fallbackLocale: 'fr', supportedLocales: ['en', 'fr']);
 
   Flavor.create(
     Environment.dev,
     color: Colors.green,
     name: 'VIP 1 DEV',
-    properties: {
-      FlavorKey.API_URL: 'https://vipapp.kisayo-finance.com/api/'
-    },
+    properties: {FlavorKey.API_URL: 'https://vipapp.kisayo-finance.com/api/'},
   );
 
-    WidgetsFlutterBinding.ensureInitialized();
-    srv.SystemChrome.setPreferredOrientations(
-        [srv.DeviceOrientation.portraitUp,srv.DeviceOrientation.portraitDown])
-        .then((_){
+  WidgetsFlutterBinding.ensureInitialized();
+  srv.SystemChrome.setPreferredOrientations([
+    srv.DeviceOrientation.portraitUp,
+    srv.DeviceOrientation.portraitDown
+  ]).then(
+    (_) {
       timeago.setLocaleMessages('fr', timeago.FrMessages());
-      runApp(
-          DevicePreview(
-            enabled: false,
-            builder: (context) => LocalizedApp(delegate, IDERMATO())
-        )
-      );
+      runApp(DevicePreview(
+          enabled: false,
+          builder: (context) => LocalizedApp(delegate, VIPAPP())));
     },
   );
 }

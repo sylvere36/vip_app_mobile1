@@ -31,7 +31,7 @@ void main() async {
     runApp(
         DevicePreview(
             enabled: false,
-            builder: (context) => LocalizedApp(delegate, IDERMATO())
+            builder: (context) => LocalizedApp(delegate, VIPAPP())
         )
     );
   },

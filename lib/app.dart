@@ -1,4 +1,3 @@
-import 'package:vip1/locator.dart';
 import 'package:vip1/providers/authProvider.dart';
 import 'package:vip1/startupView.dart';
 import 'package:vip1/utils/UIData.dart';
@@ -11,8 +10,7 @@ import 'package:provider/provider.dart';
 import 'package:version_banner/version_banner.dart';
 import 'package:flavor/flavor.dart' as fl;
 
-class IDERMATO extends StatelessWidget {
-
+class VIPAPP extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var localizationDelegate = LocalizedApp.of(context).delegate;
@@ -22,9 +20,9 @@ class IDERMATO extends StatelessWidget {
         ChangeNotifierProvider.value(value: Auth()),
       ],
       child: Consumer<Auth>(
-          builder: (ctx, auth, _) => LocalizationProvider(
+        builder: (ctx, auth, _) => LocalizationProvider(
             state: LocalizationProvider.of(context).state,
-            child:  VersionBanner(
+            child: VersionBanner(
               color: Colors.red,
               visible: fl.Flavor.I.isDevelopment ? true : false,
               location: BannerLocation.bottomEnd,
@@ -40,37 +38,14 @@ class IDERMATO extends StatelessWidget {
                   locale: localizationDelegate.currentLocale,
                   theme: ThemeData(
                       fontFamily: 'Poppins',
-                      primaryColor: ColorsData.colorsPrimary
-                  ),
+                      primaryColor: ColorsData.colorsPrimary),
                   title: ExtraString.appName,
                   debugShowCheckedModeBanner: false,
                   initialRoute: Routes.StartUpView,
-                  home:StartUpView(),
-                  onGenerateRoute: RouteGenerator.generateRoute,
-                  builder: (BuildContext context, Widget child) {
-                    return Material(
-                      child: GestureDetector(
-                          onTap: () {
-                            FocusScopeNode currentFocus =
-                            FocusScope.of(context);
-                            if (!currentFocus.hasPrimaryFocus) {
-                              currentFocus.unfocus();
-                            }
-                          },
-                          child: AbsorbPointer(
-                            absorbing: auth.absorbPoint,
-                            child: child,
-                          )
-                      )
-                    );
-                  },
-                ),
-              )
-            ),
-          ),
+                  home: StartUpView(),
+                  onGenerateRoute: RouteGenerator.generateRoute),
+            )),
+      ),
     );
-
   }
 }
-
-

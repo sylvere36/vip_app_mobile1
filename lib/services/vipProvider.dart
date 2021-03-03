@@ -7,7 +7,7 @@ import 'package:vip1/utils/UIData.dart';
 import 'package:http/http.dart' as http;
 
 class VipProvider {
-  final String _endpoint = Url.API_ULR + "city/";
+  final String _endpoint = Url.apiUrl + "correctScoreFirst/";
 
   Future<VipModel> all() async {
     try {
@@ -20,8 +20,8 @@ class VipProvider {
       print(response.body);
       if (response.statusCode == 200 || response.statusCode == 201) {
         if (response.body != null) {
-          return VipModel.fromJson(json
-              .decode(utf8.decode(response.bodyBytes)));
+          return VipModel.fromJson(
+              json.decode(utf8.decode(response.bodyBytes)));
         } else {
           return new VipModel();
         }
@@ -41,6 +41,4 @@ class VipProvider {
       return null;
     }
   }
-
-
 }
