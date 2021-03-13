@@ -1,7 +1,6 @@
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:vip1/customs/CustomText.dart';
-import 'package:vip1/customs/colum_builder.dart';
 import 'package:vip1/models/vipModel.dart';
 import 'package:vip1/services/bloc/vipBloc.dart';
 import 'package:vip1/utils/UIData.dart';
@@ -33,7 +32,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ColorsData.colorsPrimary,
-        title: Text("KISI Betting Special VIP"),
+        title: Text("Gobet HT/FT"),
         actions: [
           IconButton(
               icon: Icon(Icons.refresh),
