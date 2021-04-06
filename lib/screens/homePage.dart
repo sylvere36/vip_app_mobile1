@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                               },
                               order: GroupedListOrder.DESC,
                               itemBuilder: (context, Datum dt) => Card(
-                                color: Colors.white,
+                                color: Colors.grey[300],
                                 elevation: 3.0,
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
@@ -119,127 +119,130 @@ class _HomePageState extends State<HomePage> {
                                               padding:
                                                   const EdgeInsets.all(8.0),
                                               child: Card(
-                                                color: Colors.white54,
-                                                child: (dt.validate == "1")
-                                                    ? Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .all(8.0),
-                                                        child: Icon(
-                                                          Icons.check,
-                                                          color: Colors.green,
-                                                        ),
-                                                      )
-                                                    : Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .all(8.0),
-                                                        child: Icon(
-                                                          FontAwesomeIcons
-                                                              .question,
-                                                          color: Colors.white,
-                                                        ),
-                                                      ),
+                                                  color: Colors.white54,
+                                                  child: validateWidget(
+                                                      dt.date, dt.validate)),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border(
+                                            top: BorderSide(
+                                              color: Colors.black,
+                                              width: 3.0,
+                                            ),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Expanded(
+                                              flex: 4,
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Expanded(
+                                                    flex: 1,
+                                                    child: Center(),
+                                                  ),
+                                                  Expanded(
+                                                    flex: 5,
+                                                    child: CustomText(
+                                                      dt.equipes,
+                                                      color: Colors.black,
+                                                      scale: 1.5,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                    ),
+                                                  )
+                                                ],
                                               ),
                                             ),
-                                          )
-                                        ],
+                                            Expanded(
+                                              flex: 1,
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Card(
+                                                    color: Colors.white54,
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: CustomText(
+                                                        dt.score,
+                                                        color: Colors.black,
+                                                        scale: 1.5,
+                                                      ),
+                                                    )),
+                                              ),
+                                            )
+                                          ],
+                                        ),
                                       ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Expanded(
-                                            flex: 4,
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Expanded(
-                                                  flex: 1,
-                                                  child: Center(),
-                                                ),
-                                                Expanded(
-                                                  flex: 5,
-                                                  child: CustomText(
-                                                    dt.equipes,
-                                                    color: Colors.black,
-                                                    scale: 1.5,
-                                                    textAlign: TextAlign.center,
-                                                  ),
-                                                )
-                                              ],
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          border: Border(
+                                            top: BorderSide(
+                                              color: Colors.black,
+                                              width: 3.0,
                                             ),
                                           ),
-                                          Expanded(
-                                            flex: 1,
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Card(
-                                                  color: Colors.white54,
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
-                                                    child: CustomText(
-                                                      dt.cote,
-                                                      color: Colors.black,
-                                                      scale: 1.5,
-                                                    ),
-                                                  )),
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Expanded(
-                                            flex: 4,
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Expanded(
-                                                  flex: 1,
-                                                  child: Center(),
-                                                ),
-                                                Expanded(
-                                                  flex: 5,
-                                                  child: CustomText(
-                                                    "Winner : " + dt.winner,
-                                                    color: Colors.black,
-                                                    scale: 1.5,
-                                                    textAlign: TextAlign.center,
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Expanded(
+                                              flex: 4,
+                                              child: Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Expanded(
+                                                    flex: 1,
+                                                    child: Center(),
                                                   ),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                          Expanded(
-                                            flex: 1,
-                                            child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Card(
-                                                  color: Colors.white54,
-                                                  child: Padding(
-                                                    padding:
-                                                        const EdgeInsets.all(
-                                                            8.0),
+                                                  Expanded(
+                                                    flex: 5,
                                                     child: CustomText(
-                                                      dt.score,
+                                                      "Winner : " + dt.winner,
                                                       color: Colors.black,
                                                       scale: 1.5,
+                                                      textAlign:
+                                                          TextAlign.center,
                                                     ),
-                                                  )),
+                                                  )
+                                                ],
+                                              ),
                                             ),
-                                          )
-                                        ],
+                                            Expanded(
+                                              flex: 1,
+                                              child: Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Card(
+                                                    color: Colors.white54,
+                                                    child: Padding(
+                                                      padding:
+                                                          const EdgeInsets.all(
+                                                              8.0),
+                                                      child: CustomText(
+                                                        dt.cote,
+                                                        color: Colors.black,
+                                                        scale: 1.5,
+                                                      ),
+                                                    )),
+                                              ),
+                                            )
+                                          ],
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -275,5 +278,46 @@ class _HomePageState extends State<HomePage> {
         children: [Icon(FontAwesomeIcons.infoCircle), Text("No Data")],
       ),
     );
+  }
+
+  Widget validateWidget(DateTime date, String validate) {
+    DateTime dateTime = DateTime.now();
+    int diffMinute = dateTime.difference(date).inMinutes;
+
+    print(diffMinute);
+
+    if (diffMinute > 0 && validate == "0") {
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Icon(
+          Icons.close,
+          color: Colors.red,
+        ),
+      );
+    } else if (diffMinute > 0 && validate == "1") {
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Icon(
+          Icons.check,
+          color: Colors.green,
+        ),
+      );
+    } else if (diffMinute < 0 && validate == "0") {
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Icon(
+          FontAwesomeIcons.question,
+          color: Colors.white,
+        ),
+      );
+    } else {
+      return Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Icon(
+          FontAwesomeIcons.question,
+          color: Colors.white,
+        ),
+      );
+    }
   }
 }
