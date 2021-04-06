@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flavor/flavor.dart' as fl;
 
 class ExtraString {
-  static const String appName = "IDERMATO";
+  static const String appName = "Gobet HT/FT";
 
   //Version
   static const String version = "Version : 1.0.0";
