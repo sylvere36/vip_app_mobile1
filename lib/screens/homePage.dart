@@ -30,9 +30,10 @@ class _HomePageState extends State<HomePage> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.black87,
       appBar: AppBar(
         backgroundColor: ColorsData.colorsPrimary,
-        title: Text("Gobet HT/FT"),
+        title: Text(ExtraString.appName),
         actions: [
           IconButton(
               icon: Icon(Icons.refresh),
@@ -71,11 +72,12 @@ class _HomePageState extends State<HomePage> {
                                   "${date.year}.${date.month}.${date.day} SPECIAL CORRECT SCORE !",
                                   maxLines: 3,
                                   scale: 2.2,
+                                  color: Colors.white,
                                 );
                               },
                               order: GroupedListOrder.DESC,
                               itemBuilder: (context, Datum dt) => Card(
-                                color: Colors.grey[300],
+                                color: Colors.grey[500],
                                 elevation: 3.0,
                                 child: Padding(
                                   padding: const EdgeInsets.all(8.0),
@@ -131,7 +133,7 @@ class _HomePageState extends State<HomePage> {
                                           border: Border(
                                             top: BorderSide(
                                               color: Colors.black,
-                                              width: 3.0,
+                                              width: 2.0,
                                             ),
                                           ),
                                         ),
@@ -190,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                                           border: Border(
                                             top: BorderSide(
                                               color: Colors.black,
-                                              width: 3.0,
+                                              width: 2.0,
                                             ),
                                           ),
                                         ),

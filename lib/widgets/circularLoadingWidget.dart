@@ -30,7 +30,7 @@ class _CircularLoadingWidgetState extends State<CircularLoadingWidget>
         height: widget.height,
         child: new Center(
           child: new SpinKitFadingCircle(
-            color: ColorsData.colorsBlack,
+            color: Colors.white,
             size: 50.0,
           ),
         ),
