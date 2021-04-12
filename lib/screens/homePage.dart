@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                               },
                               groupSeparatorBuilder: (DateTime date) {
                                 return CustomTextMultipleLigne(
-                                  "${date.year}.${date.month}.${date.day} SPECIAL CORRECT SCORE !",
+                                  "${date.year}.${date.month}.${date.day} SPECIAL ${ExtraString.appName} !",
                                   maxLines: 3,
                                   scale: 2.2,
                                   color: Colors.white,
