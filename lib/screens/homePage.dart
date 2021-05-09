@@ -286,8 +286,6 @@ class _HomePageState extends State<HomePage> {
     DateTime dateTime = DateTime.now();
     int diffMinute = dateTime.difference(date).inMinutes;
 
-    print(diffMinute);
-
     if (diffMinute > 0 && validate == "0") {
       return Padding(
         padding: const EdgeInsets.all(8.0),
